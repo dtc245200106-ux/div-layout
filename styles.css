@@ -1,0 +1,283 @@
+/* ============================================
+   RESET & GLOBAL
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    height: 50px;
+}
+
+.logo {
+    background-color: #444;
+    padding: 0 25px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.nav {
+    display: flex;
+    flex: 1;
+}
+
+.nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 50px;
+    font-size: 14px;
+    color: #ccc;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.nav a:hover {
+    background-color: #555;
+    color: white;
+}
+
+.nav a.active {
+    background-color: #222;
+    color: white;
+    font-weight: bold;
+}
+
+.login {
+    padding: 0 25px;
+}
+
+.login a {
+    color: #ccc;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.login a:hover {
+    color: white;
+}
+
+/* ============================================
+   MAIN CONTAINER - 3 cột
+   ============================================ */
+.main-container {
+    display: flex;
+    min-height: 500px;
+}
+
+/* ============================================
+   SIDEBAR TRÁI
+   ============================================ */
+.left-sidebar {
+    width: 180px;
+    flex-shrink: 0;
+    background-color: #e8e8e8;
+    padding: 20px;
+}
+
+.left-sidebar ul {
+    list-style: none;
+}
+
+.left-sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.left-sidebar ul li a {
+    color: #2196F3;
+    font-size: 14px;
+    transition: color 0.2s, padding-left 0.2s;
+    display: block;
+}
+
+.left-sidebar ul li a:hover {
+    color: #0d47a1;
+    padding-left: 5px;
+    text-decoration: underline;
+}
+
+/* ============================================
+   NỘI DUNG CHÍNH
+   ============================================ */
+.main-content {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 25px 35px;
+}
+
+.main-content h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.main-content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #222;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.main-content p {
+    font-size: 15px;
+    color: #444;
+    line-height: 1.7;
+    text-align: justify;
+    margin-bottom: 15px;
+}
+
+/* ============================================
+   SIDEBAR PHẢI
+   ============================================ */
+.right-sidebar {
+    width: 180px;
+    flex-shrink: 0;
+    background-color: #e8e8e8;
+    padding: 20px;
+}
+
+.ads {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 30px 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablet: Ẩn sidebar phải */
+@media (max-width: 992px) {
+    .right-sidebar {
+        display: none;
+    }
+
+    .left-sidebar {
+        width: 150px;
+    }
+}
+
+/* Mobile: Chuyển thành 1 cột dọc */
+@media (max-width: 768px) {
+    .header {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px;
+    }
+
+    .logo {
+        padding: 10px 15px;
+        height: auto;
+    }
+
+    .nav {
+        width: 100%;
+        flex-wrap: wrap;
+        margin-top: 10px;
+    }
+
+    .nav a {
+        padding: 10px 15px;
+        height: auto;
+    }
+
+    .login {
+        padding: 10px 15px;
+        width: 100%;
+        text-align: right;
+    }
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .left-sidebar {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .left-sidebar ul {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .left-sidebar ul li {
+        margin-bottom: 0;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .main-content h1 {
+        font-size: 26px;
+    }
+
+    .main-content h2 {
+        font-size: 20px;
+    }
+}
+
+/* Mobile nhỏ */
+@media (max-width: 480px) {
+    .nav a {
+        padding: 8px 10px;
+        font-size: 13px;
+    }
+
+    .main-content h1 {
+        font-size: 22px;
+    }
+
+    .main-content h2 {
+        font-size: 18px;
+    }
+
+    .main-content p {
+        font-size: 14px;
+    }
+}
